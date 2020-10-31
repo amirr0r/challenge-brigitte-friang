@@ -1,15 +1,20 @@
 # Challenge Brigitte Fiang
 
-DGSE/ESIEE Paris CTF - https://challengecybersec.fr/
+![Ouvrez bien les yeux!](img/DeepinScreenshot_select-area_20201031170332.png)
 
 
-`view-source:https://challengecybersec.fr/` : 
+## Chall 0: HTML source code
+
+En inspectant les sources de https://challengecybersec.fr/(https://challengecybersec.fr/) on tombe sur le commentaire suivant: 
 
 ```html
 <!--/static/message-secret.html-->
 ```
 
-Dans [https://challengecybersec.fr/static/message-secret.html](https://challengecybersec.fr/static/message-secret.html):
+![message secret](img/DeepinScreenshot_select-area_20201031170241.png)
+
+Lorsqu'on se rend  l'adresse [https://challengecybersec.fr/static/message-secret.html](https://challengecybersec.fr/static/message-secret.html), on obtient le texte suivant:
+
 
 "Zp cvbz whyclulg h spyl jl tlzzhnl, j'lza xbl cvbz wvbclg ylqvpukyl s’vwlyhapvu «Iypnpaal Myphun». Ylqvpnulg-uvbz yhwpkltlua.
 
@@ -23,7 +28,15 @@ Lssl yluayl h s'VYAM, la klcplua jvyylzwvukhual kl nblyyl. Lssl viaplua zvu iylc
 
 Lssl ljypa wsbzplbyz spcylz la altvpnul kl s'lunhnltlua klz mlttlz khuz sh Ylzpzahujl"
 
-Sur [https://rot13.com/](https://rot13.com/), on se rends compte qu'il s'agit de **rot19**:
+A en croire le titre de la page, il s'agit très certainement d'un **chiffrement de César**:
+
+![Cesar](img/DeepinScreenshot_select-area_20201031170441.png)
+
+## Chall 1: Caesar Cipher (ROT19 )
+
+Sur [https://rot13.com/](https://rot13.com/), on se rends compte qu'il s'agit d'un message chiffré en **rot19**:
+
+![rot19](img/DeepinScreenshot_select-area_20201031170827.png)
 
 "Si vous parvenez a lire ce message, c'est que vous pouvez rejoindre l’operation «Brigitte Friang». Rejoignez-nous rapidement.
 
@@ -36,3 +49,38 @@ Apres son retour de deportation, elle participe a la creation du Rassemblement d
 Elle rentre a l'ORTF, et devient correspondante de guerre. Elle obtient son brevet de saut en parachute et accompagne des commandos de parachutistes en operation durant la guerre d’Indochine. Elle raconte son experience dans Les Fleurs du ciel (1955). D'autres agents sont sur le coup au moment ou je vous parle. Les meilleurs d'entre vous se donneront rendez-vous a l'European Cyberweek a Rennes pour une remise de prix. Resolvez le plus d'epreuves avant la fin de cette mission et tentez de gagner votre place parmi l'elite! Par la suite, elle couvre l’expedition de Suez, la guerre des Six Jours et la guerre du Viet Nam. Elle prend position en faveur d'une autonomie du journalisme dans le service public ce qui lui vaut d'etre licenciee de l'ORTF.
 
 Elle ecrit plusieurs livres et temoigne de l'engagement des femmes dans la Resistance."
+
+## Chall 2: Chat
+
+> **Completez l’URL avec l’information qui est cachee dans ce message.**
+
+On constate dans le code HTML que certaines lettres sont en gras:
+
+![Lettres en gras](img/DeepinScreenshot_select-area_20201031181040.png)
+
+`/joha` est l'equivalent de `/chat` en rot19.
+
+![Chat](img/DeepinScreenshot_select-area_20201031182417.png)
+
+___
+
+![services](img/services.png)
+
+![direction](img/direction.png)
+
+## Crypto
+
+![crypto](img/crypto.png)
+
+## Web
+
+![web](img/web.png)
+
+## Algo
+
+![algo](img/algo.png)
+
+## Forensic
+
+![forensic](img/forensic.png)
+
