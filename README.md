@@ -1,17 +1,17 @@
 # Challenge Brigitte Fiang
 
-![Ouvrez bien les yeux!](img/DeepinScreenshot_select-area_20201031170332.png)
+![Ouvrez bien les yeux!](assets/img/DeepinScreenshot_select-area_20201031170332.png)
 
 
 ## Chall 0: HTML source code
 
-En inspectant les sources de https://challengecybersec.fr/(https://challengecybersec.fr/) on tombe sur le commentaire suivant: 
+En inspectant les sources de [https://challengecybersec.fr/](https://challengecybersec.fr/) on tombe sur le commentaire suivant: 
 
 ```html
 <!--/static/message-secret.html-->
 ```
 
-![message secret](img/DeepinScreenshot_select-area_20201031170241.png)
+![message secret](assets/img/DeepinScreenshot_select-area_20201031170241.png)
 
 Lorsqu'on se rend  l'adresse [https://challengecybersec.fr/static/message-secret.html](https://challengecybersec.fr/static/message-secret.html), on obtient le texte suivant:
 
@@ -30,13 +30,13 @@ Lssl ljypa wsbzplbyz spcylz la altvpnul kl s'lunhnltlua klz mlttlz khuz sh Ylzpz
 
 A en croire le titre de la page, il s'agit très certainement d'un **chiffrement de César**:
 
-![Cesar](img/DeepinScreenshot_select-area_20201031170441.png)
+![Cesar](assets/img/DeepinScreenshot_select-area_20201031170441.png)
 
 ## Chall 1: Caesar Cipher (ROT19 )
 
 Sur [https://rot13.com/](https://rot13.com/), on se rends compte qu'il s'agit d'un message chiffré en **rot19**:
 
-![rot19](img/DeepinScreenshot_select-area_20201031170827.png)
+![rot19](assets/img/DeepinScreenshot_select-area_20201031170827.png)
 
 "Si vous parvenez a lire ce message, c'est que vous pouvez rejoindre l’operation «Brigitte Friang». Rejoignez-nous rapidement.
 
@@ -56,31 +56,47 @@ Elle ecrit plusieurs livres et temoigne de l'engagement des femmes dans la Resis
 
 On constate dans le code HTML que certaines lettres sont en gras:
 
-![Lettres en gras](img/DeepinScreenshot_select-area_20201031181040.png)
+![Lettres en gras](assets/img/DeepinScreenshot_select-area_20201031181040.png)
 
 `/joha` est l'equivalent de `/chat` en rot19.
 
-![Chat](img/DeepinScreenshot_select-area_20201031182417.png)
+![Chat](assets/img/DeepinScreenshot_select-area_20201031182417.png)
 
 ___
 
-![services](img/services.png)
+![services](assets/img/services.png)
 
-![direction](img/direction.png)
+![direction](assets/img/direction.png)
 
 ## Crypto
 
-![crypto](img/crypto.png)
+![crypto](assets/img/crypto.png)
 
 ## Web
 
-![web](img/web.png)
+![web](assets/img/web.png)
+
+Le couple identifiant / mot de passe "admin - admin" permet de se connecter sur **Stockos**:
+
+![admin](assets/img/web/admin.png)
 
 ## Algo
 
-![algo](img/algo.png)
+![algo](assets/img/algo.png)
 
 ## Forensic
 
-![forensic](img/forensic.png)
+![forensic](assets/img/forensic.png)
+
+Si on cherche "Evil" dans le fichier `access.log`, on tombe sur cette IP:
+
+![Evil IP](assets/img/forensic/IP.png)
+
+En soumettant `179.97.58.61` sur le chat, **Alphonse Bertillon** nous réponds:
+
+![Forensic new file](assets/img/forensic/IP_success.png)
+
+En effet, de nombreux fichiers sont présents dans cette image:
+
+![Binwalk](assets/img/forensic/binwalk.png)
 
