@@ -19,6 +19,9 @@ SQLi => https://challengecybersec.fr/4e9033c6eacf38dc2a5df7a14526bec1/stock
 
 agent.malice@secret.evil.gov.ev
 
+* B64 Password Reset => https://challengecybersec.fr/35e334a1ef338faf064da9eb5f861d3c/reset/YWdlbnQubWFsaWNlQHNlY3JldC5ldmlsLmdvdi5ldg==
+
+Superlongpassword666
 =================================================================
 Algo:
 ----

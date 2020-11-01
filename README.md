@@ -173,7 +173,9 @@ En effet:
 
 ![base64](assets/img/web/base64_decode.png)
 
-Ainsi, il suffit de remplacer le `Ym9uc29pcmJyaWdpdHRlZnJpYW5nQHlvcG1haWwuY29t` par le base64 de `agent.malice@secret.evil.gov.ev` et le tour est joue.
+Ainsi, il suffit de remplacer le `Ym9uc29pcmJyaWdpdHRlZnJpYW5nQHlvcG1haWwuY29t` par le base64 de `agent.malice@secret.evil.gov.ev` soit `YWdlbnQubWFsaWNlQHNlY3JldC5ldmlsLmdvdi5ldg==` et le tour est joue.
+
+![Superlongpassword666](assets/img/web/Superlongpassword666.png)
 
 ### Liens utiles
 
