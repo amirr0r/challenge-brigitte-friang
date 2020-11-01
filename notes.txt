@@ -22,6 +22,8 @@ agent.malice@secret.evil.gov.ev
 * B64 Password Reset => https://challengecybersec.fr/35e334a1ef338faf064da9eb5f861d3c/reset/YWdlbnQubWFsaWNlQHNlY3JldC5ldmlsLmdvdi5ldg==
 
 Superlongpassword666
+
+DGSESIEE{2cd992f9b2319860ce3a35db6673a9b8}
 =================================================================
 Algo:
 ----

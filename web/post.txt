@@ -1,0 +1,394 @@
+No.     Time           Source                Destination           Protocol Length Info
+     19 4.364205       192.168.29.8          192.168.29.7          TCP      74     48040 → 443 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=3644747286 TSecr=0 WS=128
+
+Frame 19: 74 bytes on wire (592 bits), 74 bytes captured (592 bits)
+Ethernet II, Src: PcsCompu_81:2a:56 (08:00:27:81:2a:56), Dst: PcsCompu_75:c2:78 (08:00:27:75:c2:78)
+Internet Protocol Version 4, Src: 192.168.29.8, Dst: 192.168.29.7
+Transmission Control Protocol, Src Port: 48040, Dst Port: 443, Seq: 0, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     20 4.364521       192.168.29.7          192.168.29.8          TCP      74     443 → 48040 [SYN, ACK] Seq=0 Ack=1 Win=5792 Len=0 MSS=1460 SACK_PERM=1 TSval=345982 TSecr=3644747286 WS=4
+
+Frame 20: 74 bytes on wire (592 bits), 74 bytes captured (592 bits)
+Ethernet II, Src: PcsCompu_75:c2:78 (08:00:27:75:c2:78), Dst: PcsCompu_81:2a:56 (08:00:27:81:2a:56)
+Internet Protocol Version 4, Src: 192.168.29.7, Dst: 192.168.29.8
+Transmission Control Protocol, Src Port: 443, Dst Port: 48040, Seq: 0, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     21 4.364549       192.168.29.8          192.168.29.7          TCP      66     48040 → 443 [ACK] Seq=1 Ack=1 Win=64256 Len=0 TSval=3644747286 TSecr=345982
+
+Frame 21: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: PcsCompu_81:2a:56 (08:00:27:81:2a:56), Dst: PcsCompu_75:c2:78 (08:00:27:75:c2:78)
+Internet Protocol Version 4, Src: 192.168.29.8, Dst: 192.168.29.7
+Transmission Control Protocol, Src Port: 48040, Dst Port: 443, Seq: 1, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     22 4.366205       192.168.29.8          192.168.29.7          TLSv1    583    Client Hello
+
+Frame 22: 583 bytes on wire (4664 bits), 583 bytes captured (4664 bits)
+Ethernet II, Src: PcsCompu_81:2a:56 (08:00:27:81:2a:56), Dst: PcsCompu_75:c2:78 (08:00:27:75:c2:78)
+Internet Protocol Version 4, Src: 192.168.29.8, Dst: 192.168.29.7
+Transmission Control Protocol, Src Port: 48040, Dst Port: 443, Seq: 1, Ack: 1, Len: 517
+Transport Layer Security
+    TLSv1 Record Layer: Handshake Protocol: Client Hello
+        Content Type: Handshake (22)
+        Version: TLS 1.0 (0x0301)
+        Length: 512
+        Handshake Protocol: Client Hello
+            Handshake Type: Client Hello (1)
+            Length: 508
+            Version: TLS 1.2 (0x0303)
+            Random: f5a0f406cbe77b368a309ce85379afdd3043c9e8fe29dd8c…
+            Session ID Length: 32
+            Session ID: 4fefe3e9b49b164cd606a28add5605e212551e06042d0a96…
+            Cipher Suites Length: 12
+            Cipher Suites (6 suites)
+            Compression Methods Length: 1
+            Compression Methods (1 method)
+            Extensions Length: 423
+            Extension: extended_master_secret (len=0)
+            Extension: renegotiation_info (len=1)
+            Extension: supported_groups (len=14)
+            Extension: session_ticket (len=0)
+            Extension: application_layer_protocol_negotiation (len=14)
+            Extension: status_request (len=5)
+            Extension: key_share (len=107)
+            Extension: supported_versions (len=9)
+            Extension: signature_algorithms (len=24)
+            Extension: psk_key_exchange_modes (len=2)
+            Extension: record_size_limit (len=2)
+            Extension: padding (len=197)
+
+No.     Time           Source                Destination           Protocol Length Info
+     23 4.366511       192.168.29.7          192.168.29.8          TCP      66     443 → 48040 [ACK] Seq=1 Ack=518 Win=6864 Len=0 TSval=345982 TSecr=3644747288
+
+Frame 23: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: PcsCompu_75:c2:78 (08:00:27:75:c2:78), Dst: PcsCompu_81:2a:56 (08:00:27:81:2a:56)
+Internet Protocol Version 4, Src: 192.168.29.7, Dst: 192.168.29.8
+Transmission Control Protocol, Src Port: 443, Dst Port: 48040, Seq: 1, Ack: 518, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     24 4.367242       192.168.29.7          192.168.29.8          TLSv1    888    Server Hello, Certificate, Server Hello Done
+
+Frame 24: 888 bytes on wire (7104 bits), 888 bytes captured (7104 bits)
+Ethernet II, Src: PcsCompu_75:c2:78 (08:00:27:75:c2:78), Dst: PcsCompu_81:2a:56 (08:00:27:81:2a:56)
+Internet Protocol Version 4, Src: 192.168.29.7, Dst: 192.168.29.8
+Transmission Control Protocol, Src Port: 443, Dst Port: 48040, Seq: 1, Ack: 518, Len: 822
+Transport Layer Security
+    TLSv1 Record Layer: Handshake Protocol: Server Hello
+        Content Type: Handshake (22)
+        Version: TLS 1.0 (0x0301)
+        Length: 74
+        Handshake Protocol: Server Hello
+            Handshake Type: Server Hello (2)
+            Length: 70
+            Version: TLS 1.0 (0x0301)
+            Random: 5f27c197f98970ae2d7f3f0f3a33672f24715feb3abc55b5…
+            Session ID Length: 32
+            Session ID: bde57d668cf43663945705b984739b21f2585bb28a0257c4…
+            Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
+            Compression Method: null (0)
+    TLSv1 Record Layer: Handshake Protocol: Certificate
+        Content Type: Handshake (22)
+        Version: TLS 1.0 (0x0301)
+        Length: 729
+        Handshake Protocol: Certificate
+            Handshake Type: Certificate (11)
+            Length: 725
+            Certificates Length: 722
+            Certificates (722 bytes)
+                Certificate Length: 719
+                Certificate: 308202cb3082026da003020102020900c23368a31752c7dd… (id-at-commonName=server.evil.gouv,id-at-organizationalUnitName=IT,id-at-organizationName=Evil Gouv,id-at-localityName=Evil City,id-at-stateOrProvinceName=Evil Country,id-at-
+                    signedCertificate
+                    algorithmIdentifier (sha1WithRSAEncryption)
+                    Padding: 0
+                    encrypted: 2ea859740605cc13d536d0132c264f85c07d02261016ad19…
+    TLSv1 Record Layer: Handshake Protocol: Server Hello Done
+        Content Type: Handshake (22)
+        Version: TLS 1.0 (0x0301)
+        Length: 4
+        Handshake Protocol: Server Hello Done
+            Handshake Type: Server Hello Done (14)
+            Length: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     25 4.367251       192.168.29.8          192.168.29.7          TCP      66     48040 → 443 [ACK] Seq=518 Ack=823 Win=64128 Len=0 TSval=3644747289 TSecr=345982
+
+Frame 25: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: PcsCompu_81:2a:56 (08:00:27:81:2a:56), Dst: PcsCompu_75:c2:78 (08:00:27:75:c2:78)
+Internet Protocol Version 4, Src: 192.168.29.8, Dst: 192.168.29.7
+Transmission Control Protocol, Src Port: 48040, Dst Port: 443, Seq: 518, Ack: 823, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     26 4.367878       192.168.29.8          192.168.29.7          TLSv1    208    Client Key Exchange, Change Cipher Spec, Finished
+
+Frame 26: 208 bytes on wire (1664 bits), 208 bytes captured (1664 bits)
+Ethernet II, Src: PcsCompu_81:2a:56 (08:00:27:81:2a:56), Dst: PcsCompu_75:c2:78 (08:00:27:75:c2:78)
+Internet Protocol Version 4, Src: 192.168.29.8, Dst: 192.168.29.7
+Transmission Control Protocol, Src Port: 48040, Dst Port: 443, Seq: 518, Ack: 823, Len: 142
+Transport Layer Security
+    TLSv1 Record Layer: Handshake Protocol: Client Key Exchange
+        Content Type: Handshake (22)
+        Version: TLS 1.0 (0x0301)
+        Length: 78
+        Handshake Protocol: Client Key Exchange
+            Handshake Type: Client Key Exchange (16)
+            Length: 74
+            RSA Encrypted PreMaster Secret
+    TLSv1 Record Layer: Change Cipher Spec Protocol: Change Cipher Spec
+        Content Type: Change Cipher Spec (20)
+        Version: TLS 1.0 (0x0301)
+        Length: 1
+        Change Cipher Spec Message
+    TLSv1 Record Layer: Handshake Protocol: Finished
+        Content Type: Handshake (22)
+        Version: TLS 1.0 (0x0301)
+        Length: 48
+        Handshake Protocol: Finished
+            Handshake Type: Finished (20)
+            Length: 12
+            Verify Data
+
+No.     Time           Source                Destination           Protocol Length Info
+     27 4.369299       192.168.29.7          192.168.29.8          TLSv1    125    Change Cipher Spec, Finished
+
+Frame 27: 125 bytes on wire (1000 bits), 125 bytes captured (1000 bits)
+Ethernet II, Src: PcsCompu_75:c2:78 (08:00:27:75:c2:78), Dst: PcsCompu_81:2a:56 (08:00:27:81:2a:56)
+Internet Protocol Version 4, Src: 192.168.29.7, Dst: 192.168.29.8
+Transmission Control Protocol, Src Port: 443, Dst Port: 48040, Seq: 823, Ack: 660, Len: 59
+Transport Layer Security
+    TLSv1 Record Layer: Change Cipher Spec Protocol: Change Cipher Spec
+        Content Type: Change Cipher Spec (20)
+        Version: TLS 1.0 (0x0301)
+        Length: 1
+        Change Cipher Spec Message
+    TLSv1 Record Layer: Handshake Protocol: Finished
+        Content Type: Handshake (22)
+        Version: TLS 1.0 (0x0301)
+        Length: 48
+        Handshake Protocol: Finished
+            Handshake Type: Finished (20)
+            Length: 12
+            Verify Data
+
+No.     Time           Source                Destination           Protocol Length Info
+     28 4.369316       192.168.29.8          192.168.29.7          TCP      66     48040 → 443 [ACK] Seq=660 Ack=882 Win=64128 Len=0 TSval=3644747291 TSecr=345983
+
+Frame 28: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: PcsCompu_81:2a:56 (08:00:27:81:2a:56), Dst: PcsCompu_75:c2:78 (08:00:27:75:c2:78)
+Internet Protocol Version 4, Src: 192.168.29.8, Dst: 192.168.29.7
+Transmission Control Protocol, Src Port: 48040, Dst Port: 443, Seq: 660, Ack: 882, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     29 4.372935       192.168.29.8          192.168.29.7          TLSv1    103    [TLS segment of a reassembled PDU]
+
+Frame 29: 103 bytes on wire (824 bits), 103 bytes captured (824 bits)
+Ethernet II, Src: PcsCompu_81:2a:56 (08:00:27:81:2a:56), Dst: PcsCompu_75:c2:78 (08:00:27:75:c2:78)
+Internet Protocol Version 4, Src: 192.168.29.8, Dst: 192.168.29.7
+Transmission Control Protocol, Src Port: 48040, Dst Port: 443, Seq: 660, Ack: 882, Len: 37
+Transport Layer Security
+    TLSv1 Record Layer: Application Data Protocol: http-over-tls
+        Content Type: Application Data (23)
+        Version: TLS 1.0 (0x0301)
+        Length: 32
+        Encrypted Application Data: c8d528394f4fcfbc6adb6ea1291beffff3a9c2bb5991e0a5…
+    TLS segment data (1 byte)
+
+No.     Time           Source                Destination           Protocol Length Info
+     30 4.373028       192.168.29.8          192.168.29.7          HTTP     567    POST /7a144cdc500b28e80cf760d60aca2ed3 HTTP/1.1  (application/x-www-form-urlencoded)
+
+Frame 30: 567 bytes on wire (4536 bits), 567 bytes captured (4536 bits)
+Ethernet II, Src: PcsCompu_81:2a:56 (08:00:27:81:2a:56), Dst: PcsCompu_75:c2:78 (08:00:27:75:c2:78)
+Internet Protocol Version 4, Src: 192.168.29.8, Dst: 192.168.29.7
+Transmission Control Protocol, Src Port: 48040, Dst Port: 443, Seq: 697, Ack: 882, Len: 501
+Transport Layer Security
+    TLSv1 Record Layer: Application Data Protocol: http-over-tls
+        Content Type: Application Data (23)
+        Version: TLS 1.0 (0x0301)
+        Length: 496
+        Encrypted Application Data: fec3136cd2a4ecd47a4a964b3397a3167ba6889ce73a9ba3…
+    TLS segment data (462 bytes)
+[2 Reassembled TLS segments (463 bytes): #29(1), #30(462)]
+Hypertext Transfer Protocol
+    POST /7a144cdc500b28e80cf760d60aca2ed3 HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): POST /7a144cdc500b28e80cf760d60aca2ed3 HTTP/1.1\r\n]
+        Request Method: POST
+        Request URI: /7a144cdc500b28e80cf760d60aca2ed3
+        Request Version: HTTP/1.1
+    Host: 192.168.29.7\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0\r\n
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n
+    Accept-Language: en-US,en;q=0.5\r\n
+    Accept-Encoding: gzip, deflate, br\r\n
+    Referer: https://192.168.29.7/\r\n
+    Content-Type: application/x-www-form-urlencoded\r\n
+    Content-Length: 13\r\n
+    Connection: keep-alive\r\n
+    Upgrade-Insecure-Requests: 1\r\n
+    \r\n
+    [Full request URI: https://192.168.29.7/7a144cdc500b28e80cf760d60aca2ed3]
+    [HTTP request 1/2]
+    [Response in frame: 32]
+    [Next request in frame: 35]
+    File Data: 13 bytes
+HTML Form URL Encoded: application/x-www-form-urlencoded
+
+No.     Time           Source                Destination           Protocol Length Info
+     31 4.373238       192.168.29.7          192.168.29.8          TCP      66     443 → 48040 [ACK] Seq=882 Ack=1198 Win=9008 Len=0 TSval=345983 TSecr=3644747295
+
+Frame 31: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: PcsCompu_75:c2:78 (08:00:27:75:c2:78), Dst: PcsCompu_81:2a:56 (08:00:27:81:2a:56)
+Internet Protocol Version 4, Src: 192.168.29.7, Dst: 192.168.29.8
+Transmission Control Protocol, Src Port: 443, Dst Port: 48040, Seq: 882, Ack: 1198, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     32 4.373588       192.168.29.7          192.168.29.8          HTTP     604    HTTP/1.1 404 Not Found  (text/html)
+
+Frame 32: 604 bytes on wire (4832 bits), 604 bytes captured (4832 bits)
+Ethernet II, Src: PcsCompu_75:c2:78 (08:00:27:75:c2:78), Dst: PcsCompu_81:2a:56 (08:00:27:81:2a:56)
+Internet Protocol Version 4, Src: 192.168.29.7, Dst: 192.168.29.8
+Transmission Control Protocol, Src Port: 443, Dst Port: 48040, Seq: 882, Ack: 1198, Len: 538
+Transport Layer Security
+    TLSv1 Record Layer: Application Data Protocol: http-over-tls
+        Content Type: Application Data (23)
+        Version: TLS 1.0 (0x0301)
+        Length: 272
+        Encrypted Application Data: a6a1ad86be7b1ac25759e5c1a53a26b02503ca651979fc95…
+    TLS segment data (248 bytes)
+    TLSv1 Record Layer: Application Data Protocol: http-over-tls
+        Content Type: Application Data (23)
+        Version: TLS 1.0 (0x0301)
+        Length: 256
+        Encrypted Application Data: 37f1b3df7219e5f9ecf8719a351b8492ded6d081bb7d4d4f…
+    TLS segment data (230 bytes)
+[2 Reassembled TLS segments (478 bytes): #32(248), #32(230)]
+Hypertext Transfer Protocol
+    HTTP/1.1 404 Not Found\r\n
+        [Expert Info (Chat/Sequence): HTTP/1.1 404 Not Found\r\n]
+        Response Version: HTTP/1.1
+        Status Code: 404
+        [Status Code Description: Not Found]
+        Response Phrase: Not Found
+    Date: Mon, 03 Aug 2020 07:49:43 GMT\r\n
+    Server: Apache/2.0.55 (Ubuntu) mod_ssl/2.0.55 OpenSSL/0.9.8a\r\n
+    Content-Length: 230\r\n
+    Keep-Alive: timeout=15, max=100\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: text/html; charset=iso-8859-1\r\n
+    \r\n
+    [HTTP response 1/2]
+    [Time since request: 0.000560000 seconds]
+    [Request in frame: 30]
+    [Next request in frame: 35]
+    [Next response in frame: 36]
+    [Request URI: https://192.168.29.7/7a144cdc500b28e80cf760d60aca2ed3]
+    File Data: 230 bytes
+Line-based text data: text/html (7 lines)
+
+No.     Time           Source                Destination           Protocol Length Info
+     33 4.373595       192.168.29.8          192.168.29.7          TCP      66     48040 → 443 [ACK] Seq=1198 Ack=1420 Win=64128 Len=0 TSval=3644747295 TSecr=345983
+
+Frame 33: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: PcsCompu_81:2a:56 (08:00:27:81:2a:56), Dst: PcsCompu_75:c2:78 (08:00:27:75:c2:78)
+Internet Protocol Version 4, Src: 192.168.29.8, Dst: 192.168.29.7
+Transmission Control Protocol, Src Port: 48040, Dst Port: 443, Seq: 1198, Ack: 1420, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     34 4.392536       192.168.29.8          192.168.29.7          TLSv1    103    [TLS segment of a reassembled PDU]
+
+Frame 34: 103 bytes on wire (824 bits), 103 bytes captured (824 bits)
+Ethernet II, Src: PcsCompu_81:2a:56 (08:00:27:81:2a:56), Dst: PcsCompu_75:c2:78 (08:00:27:75:c2:78)
+Internet Protocol Version 4, Src: 192.168.29.8, Dst: 192.168.29.7
+Transmission Control Protocol, Src Port: 48040, Dst Port: 443, Seq: 1198, Ack: 1420, Len: 37
+Transport Layer Security
+    TLSv1 Record Layer: Application Data Protocol: http-over-tls
+        Content Type: Application Data (23)
+        Version: TLS 1.0 (0x0301)
+        Length: 32
+        Encrypted Application Data: 3e3c067d93e24832d5b729c7329d5d1e7bfe7e7b7e61855e…
+    TLS segment data (1 byte)
+
+No.     Time           Source                Destination           Protocol Length Info
+     35 4.392578       192.168.29.8          192.168.29.7          HTTP     343    GET /favicon.ico HTTP/1.1 
+
+Frame 35: 343 bytes on wire (2744 bits), 343 bytes captured (2744 bits)
+Ethernet II, Src: PcsCompu_81:2a:56 (08:00:27:81:2a:56), Dst: PcsCompu_75:c2:78 (08:00:27:75:c2:78)
+Internet Protocol Version 4, Src: 192.168.29.8, Dst: 192.168.29.7
+Transmission Control Protocol, Src Port: 48040, Dst Port: 443, Seq: 1235, Ack: 1420, Len: 277
+Transport Layer Security
+    TLSv1 Record Layer: Application Data Protocol: http-over-tls
+        Content Type: Application Data (23)
+        Version: TLS 1.0 (0x0301)
+        Length: 272
+        Encrypted Application Data: 71af35422f16ddcc02a1abed4da029d37ecce47c0fdb2bc0…
+    TLS segment data (247 bytes)
+[2 Reassembled TLS segments (248 bytes): #34(1), #35(247)]
+Hypertext Transfer Protocol
+    GET /favicon.ico HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /favicon.ico HTTP/1.1\r\n]
+        Request Method: GET
+        Request URI: /favicon.ico
+        Request Version: HTTP/1.1
+    Host: 192.168.29.7\r\n
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0\r\n
+    Accept: image/webp,*/*\r\n
+    Accept-Language: en-US,en;q=0.5\r\n
+    Accept-Encoding: gzip, deflate, br\r\n
+    Connection: keep-alive\r\n
+    \r\n
+    [Full request URI: https://192.168.29.7/favicon.ico]
+    [HTTP request 2/2]
+    [Prev request in frame: 30]
+    [Response in frame: 36]
+
+No.     Time           Source                Destination           Protocol Length Info
+     36 4.393006       192.168.29.7          192.168.29.8          HTTP     588    HTTP/1.1 404 Not Found  (text/html)
+
+Frame 36: 588 bytes on wire (4704 bits), 588 bytes captured (4704 bits)
+Ethernet II, Src: PcsCompu_75:c2:78 (08:00:27:75:c2:78), Dst: PcsCompu_81:2a:56 (08:00:27:81:2a:56)
+Internet Protocol Version 4, Src: 192.168.29.7, Dst: 192.168.29.8
+Transmission Control Protocol, Src Port: 443, Dst Port: 48040, Seq: 1420, Ack: 1512, Len: 522
+Transport Layer Security
+    TLSv1 Record Layer: Application Data Protocol: http-over-tls
+        Content Type: Application Data (23)
+        Version: TLS 1.0 (0x0301)
+        Length: 272
+        Encrypted Application Data: 37f2a8553ab5916dafeabec341f739f647ce7fead8a06089…
+    TLS segment data (247 bytes)
+    TLSv1 Record Layer: Application Data Protocol: http-over-tls
+        Content Type: Application Data (23)
+        Version: TLS 1.0 (0x0301)
+        Length: 240
+        Encrypted Application Data: b9c841dd0cd505a8b435d5861bc16c42ac5efaed4c861b1a…
+    TLS segment data (209 bytes)
+[2 Reassembled TLS segments (456 bytes): #36(247), #36(209)]
+Hypertext Transfer Protocol
+    HTTP/1.1 404 Not Found\r\n
+        [Expert Info (Chat/Sequence): HTTP/1.1 404 Not Found\r\n]
+        Response Version: HTTP/1.1
+        Status Code: 404
+        [Status Code Description: Not Found]
+        Response Phrase: Not Found
+    Date: Mon, 03 Aug 2020 07:49:43 GMT\r\n
+    Server: Apache/2.0.55 (Ubuntu) mod_ssl/2.0.55 OpenSSL/0.9.8a\r\n
+    Content-Length: 209\r\n
+    Keep-Alive: timeout=15, max=99\r\n
+    Connection: Keep-Alive\r\n
+    Content-Type: text/html; charset=iso-8859-1\r\n
+    \r\n
+    [HTTP response 2/2]
+    [Time since request: 0.000428000 seconds]
+    [Prev request in frame: 30]
+    [Prev response in frame: 32]
+    [Request in frame: 35]
+    [Request URI: https://192.168.29.7/favicon.ico]
+    File Data: 209 bytes
+Line-based text data: text/html (7 lines)
+
+No.     Time           Source                Destination           Protocol Length Info
+     37 4.393021       192.168.29.8          192.168.29.7          TCP      66     48040 → 443 [ACK] Seq=1512 Ack=1942 Win=64128 Len=0 TSval=3644747315 TSecr=345985
+
+Frame 37: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: PcsCompu_81:2a:56 (08:00:27:81:2a:56), Dst: PcsCompu_75:c2:78 (08:00:27:75:c2:78)
+Internet Protocol Version 4, Src: 192.168.29.8, Dst: 192.168.29.7
+Transmission Control Protocol, Src Port: 48040, Dst Port: 443, Seq: 1512, Ack: 1942, Len: 0

@@ -155,6 +155,12 @@ Bien maintenant, listons les emails de la table **customer**:
 
 Et on tombe sur l'adresse mail: `agent.malice@secret.evil.gov.ev`
 
+#### Liens utiles
+
+- [Did You Order a SQL Injection?](https://www.nccgroup.com/us/about-us/newsroom-and-events/blog/2019/march/did-you-order-a-sql-injection/)
+- [SQL List All Tables](https://www.sqltutorial.org/sql-list-all-tables/)
+- [**PayloadsAllTheThings**: SQL injection](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection)
+
 ### Evil Air
 
 Maintenant l'objectif est de faire une resevation sur le site d'[Evil Air](https://challengecybersec.fr/35e334a1ef338faf064da9eb5f861d3c/),
@@ -194,12 +200,51 @@ Le flag est donc: `DGSESIEE{2cd992f9b2319860ce3a35db6673a9b8}`
 
 ### capture.pcap
 
+Commencons par extraire les certificats:
 
-### Liens utiles
+![extracting certificate](assets/img/web/extract_cert1.png)
 
-- [Did You Order a SQL Injection?](https://www.nccgroup.com/us/about-us/newsroom-and-events/blog/2019/march/did-you-order-a-sql-injection/)
-- [SQL List All Tables](https://www.sqltutorial.org/sql-list-all-tables/)
-- [**PayloadsAllTheThings**: SQL injection](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection)
+En utilisant **OpenSSL**, on peut voir plusieurs informations:
+
+```bash
+$ openssl x509 -inform DER -in cert1 -text
+```
+
+![openssl certificate](assets/img/web/openssl_cert1.png)
+
+Une information importante a noter est que l'algorithme RSA a ete utilise pour generer le certificat avec le nombre RSA: **RSA-576**.
+
+Par consequent, nous pouvons creer notree propre certificat privee, valide pour dechiffrer le trafic SSL.
+
+```bash
+$ python3 rsatool.py -f PEM -o private.pem -p 398075086424064937397125500550386491199064362342526708406385189575946388957261768583317 -q 472772146107435302536223071973048224632914695302097116459852171130520711256363590397527
+$ file private.pem 
+private.pem: PEM RSA private key
+```
+
+Import RSA key via _Edit -> Preferences_.
+
+![Wireshark prefs](assets/img/web/wireshark_prefs.png)
+
+![decode as ...](assets/img/web/decode_as.png)
+
+![decode as TLS](assets/img/web/decode_as_2.png)
+
+Et c'est reussi:
+
+![yes](assets/img/web/yes.png)
+
+On obtient le chemin: `/7a144cdc500b28e80cf760d60aca2ed3`
+
+![COROS CTF](assets/img/web/COROS_CTF.png)
+
+#### Liens utiles
+
+- [Write-up Codegate 2010 #7 - Decrypting HTTPS SSL/TLSv1 using RSA 768bits with Wireshark ](https://blog.stalkr.net/2010/03/codegate-decrypting-https-ssl-rsa-768.html)
+- [Decrypting SSL Traffic - Affinity CTF](https://www.youtube.com/watch?v=SZ70bVqUFtY)
+- [crypto_500_rsa](http://teamcryptis.fr/events/2019/10/04/event_04-writeups.html)
+- [rsatool](https://github.com/truongkma/ctf-tools/tree/master/rsatool)
+- [TLS_Decryption](https://wiki.wireshark.org/TLS#TLS_Decryption)
 
 ___
 
