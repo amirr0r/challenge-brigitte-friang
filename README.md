@@ -177,6 +177,23 @@ Ainsi, il suffit de remplacer le `Ym9uc29pcmJyaWdpdHRlZnJpYW5nQHlvcG1haWwuY29t` 
 
 ![Superlongpassword666](assets/img/web/Superlongpassword666.png)
 
+Apres s'etre connecte, il faut se rendre dans l'onglet "Mes reservations" pour obtenir le QR Code:
+
+![Reeservation](assets/img/web/qr_code.png)
+
+![FLAG](web/flag.png)
+
+Grace au site [](), j'ai pu decode le QR Code:
+
+![QR Code decode](assets/img/web/decode_online.png)
+
+Le flag est donc: `DGSESIEE{2cd992f9b2319860ce3a35db6673a9b8}`
+
+![suite](assets/img/web/suite.png)
+
+### capture.pcap
+
+
 ### Liens utiles
 
 - [Did You Order a SQL Injection?](https://www.nccgroup.com/us/about-us/newsroom-and-events/blog/2019/march/did-you-order-a-sql-injection/)
