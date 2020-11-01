@@ -2,6 +2,21 @@
 
 ![Ouvrez bien les yeux!](assets/img/DeepinScreenshot_select-area_20201031170332.png)
 
+## Sommaire
+
+- 1. [Préambule](#preambule)
+- 2. [S3curConv](#s3curconv)
+    + 2.1. [Crypto](#crypto) 
+    + 2.2. [Web](#web)
+        * 2.2.1. [Stockos](#stockos)
+        * 2.2.2. [Evil Air](#evil-air)
+    + 2.3. [Algo](#algo) 
+    + 2.4. [Forensic](#forensic)
+        * [access.log](#access-log)
+        * [evil_country_landscape.jpg](#evil-country-landscape-jpg)
+___ 
+
+# Préambule
 
 ## Chall 0: HTML source code
 
@@ -64,6 +79,8 @@ On constate dans le code HTML que certaines lettres sont en gras:
 
 ___
 
+# S3curConv
+
 ![services](assets/img/services.png)
 
 ![direction](assets/img/direction.png)
@@ -75,6 +92,8 @@ ___
 ___
 
 ## Web
+
+### Stockos
 
 ![web](assets/img/web.png)
 
@@ -135,6 +154,27 @@ Bien maintenant, listons les emails de la table **customer**:
 
 Et on tombe sur l'adresse mail: `agent.malice@secret.evil.gov.ev`
 
+### Evil Air
+
+Maintenant l'objectif est de faire une resevation sur le site d'[Evil Air](https://challengecybersec.fr/35e334a1ef338faf064da9eb5f861d3c/),
+
+2 fonctionnalites sont disponibles sur le site:
+
+1. Creation d'un compte
+2. Mot de passe oublié
+
+Lorsqu'on cree un compte _(ici avec l'adresse email `bonsoirbrigittefriang@yopmail.com`)_ puis qu'on remplit le formulaire de la page "Mot de passe oublié", on recoit un e-mail de ce type:
+
+![reset password](assets/img/web/password_reset.png)
+
+On reconnait le modele suivant: `http://challengecybersec.fr/35e334a1ef338faf064da9eb5f861d3c/reset/<BASE64_EMAIL>`
+
+En effet:
+
+![base64](assets/img/web/base64_decode.png)
+
+Ainsi, il suffit de remplacer le `Ym9uc29pcmJyaWdpdHRlZnJpYW5nQHlvcG1haWwuY29t` par le base64 de `agent.malice@secret.evil.gov.ev` et le tour est joue.
+
 ### Liens utiles
 
 - [Did You Order a SQL Injection?](https://www.nccgroup.com/us/about-us/newsroom-and-events/blog/2019/march/did-you-order-a-sql-injection/)
@@ -151,6 +191,8 @@ ___
 
 ## Forensic
 
+### access.log
+
 ![forensic](assets/img/forensic.png)
 
 Si on cherche "Evil" dans le fichier `access.log`, on tombe sur cette IP:
@@ -161,8 +203,43 @@ En soumettant `179.97.58.61` sur le chat, **Alphonse Bertillon** nous réponds:
 
 ![Forensic new file](assets/img/forensic/IP_success.png)
 
-En effet, de nombreux fichiers sont présents dans cette image:
+### evil_country_landscape.jpg
+
+De nombreux fichiers sont présents dans cette image:
 
 ![Binwalk](assets/img/forensic/binwalk.png)
 
+Apres avoir extrait les fichiers de l'image JPG, il est possible de recuperer un dump Windows via:
+
+```bash
+$ losetup /dev/loop0 part2.img 
+$ losetup /dev/loop1 part3.img 
+$ mdadm --assemble /dev/md1 /dev/loop0 /dev/loop1
+mdadm: Found some drive for an array that is already active: /dev/md/user-XPS-15-9570:6
+mdadm: giving up.
+$ ls -la /dev/md/
+total 0
+drwxr-xr-x  2 root root   60 Oct 31 22:02 .
+drwxr-xr-x 18 root root 3480 Oct 31 22:40 ..
+lrwxrwxrwx  1 root root    8 Oct 31 22:02 user-XPS-15-9570:6 -> ../md127
+$ ls -la /dev/md127
+brw-rw---- 1 root disk 9, 127 Oct 31 22:02 ../md127
+$ mkdir /mnt/md127
+$ mount /dev/md127 /mnt/md127
+$ ls -laH /mnt/md127/dump.zip 
+-rw-r--r-- 1 root root 305119359 Oct  6 11:35 /mnt/md127/dump.zip
+$ unzip /mnt/md127/dump.zip
+Archive:  dump.zip
+  inflating: dump.vmem               
+  inflating: dump.vmem.sha256        
+$ ls -lah
+total 1.3G
+drwxr-xr-x  2 root root 4.0K Nov  1 15:32 .
+drwxr-xr-x 39 root root 4.0K Nov  1 15:27 ..
+-rw-rw-r--  1 root root 1.0G Oct  5 13:13 dump.vmem
+-rw-rw-r--  1 root root   64 Oct  5 13:50 dump.vmem.sha256
+-rw-rw-r--  1 root root 291M Nov  1 15:31 dump.zip
+```
+
+Le fichier `dump.vmem` peut etre analysee avec [**volatility**](https://github.com/volatilityfoundation/volatility).
 ___
