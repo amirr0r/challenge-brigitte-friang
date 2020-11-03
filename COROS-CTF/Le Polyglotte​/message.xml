@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pdf2xml SYSTEM "pdf2xml.dtd">
+
+<pdf2xml producer="poppler" version="20.09.0">
+<page number="1" position="absolute" top="0" left="0" height="1188" width="918">
+	<fontspec id="0" size="9450" family="Times" color="#000000"/>
+	<fontspec id="1" size="105" family="Times" color="#ffffff"/>
+<text top="-7789" left="0" width="1945" height="12285" font="0">Ce document concerne l operation soleil atomique.Cette operation est strictement confidentielle et ne doit en aucun cas Œtre devoilee. Les informations sur l operation sont disseminØes dans ce fichier.Chaque partie de l information est identifiee par un nombre par ex : [0]ae7bca8e correspond a la premiŁre partie de l information qu il faut concatener au reste.</text>
+<text top="38" left="225" width="458" height="137" font="1">Top Secret</text>
+</page>
+</pdf2xml>
